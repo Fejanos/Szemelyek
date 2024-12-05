@@ -112,10 +112,29 @@ namespace ConsoleApp1
                 $"\tVáros: {adatok[j].varos}");
 
 
-            // 5. feladat
-            // Minimum keresés
+            // 6. feladat
+            // Keresés tétel
+            bool talalt = false;
+            for (int i = 0; i < adatok.Count; i++)
+            {
+                if (adatok[i].varos == "Pécs")
+                {
+                    talalt = true;
+                    break;
+                }
+            }
+            if(talalt == true)
+            {
+                Console.WriteLine($"6. feladat: Van Pécsről érkező illető!");
+            }
+            else
+            {
+                Console.WriteLine($"6. feladat: Nincs Pécsről érkező illető!");
+            }
+            // feltétel ? igaz : hamis
+            Console.WriteLine($"6. feladat: {(talalt ? "Van" : "Nincs")} Pécsről érkező illető!");
 
-            // Ez a módosítás
+
             Console.ReadKey();
         }
     }
