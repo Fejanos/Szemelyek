@@ -134,6 +134,35 @@ namespace ConsoleApp1
             // feltétel ? igaz : hamis
             Console.WriteLine($"6. feladat: {(talalt ? "Van" : "Nincs")} Pécsről érkező illető!");
 
+            // 7. feladat
+            // Statisztika
+            // Szótár - Kulcs;Érték
+            // <kulcs, érték>
+            Dictionary<string, int> stat = new Dictionary<string, int>();
+            foreach(Szemely sz in adatok)
+            {
+                // Leválogatás
+                // Kulcsokat keresem - Városok
+                if(!stat.Keys.Contains(sz.varos)) // Még nem tartalmazza a várost
+                {
+                    // pl: Budapest;1
+                    stat.Add(sz.varos, 1); // Város, érték
+                }
+                else
+                {
+                    // pl: ["Budapest"] +1
+                    // Budapest;2
+                    stat[sz.varos]++;
+                }
+            }
+            // Kiír
+            Console.WriteLine("7. feladat: Városok szerinti csoportosítás:");
+            foreach(var e in stat)
+            {
+                // Key, Value
+                Console.WriteLine($"\t{e.Key} - {e.Value} személy");
+            }
+
 
             Console.ReadKey();
         }
