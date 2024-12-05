@@ -163,6 +163,8 @@ namespace ConsoleApp1
                 Console.WriteLine($"\t{e.Key} - {e.Value} személy");
             }
 
+            // 8. feladat: HÁZI
+
 
             Console.ReadKey();
         }
